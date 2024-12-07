@@ -1,0 +1,58 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2"><%= user.firstName %> <%= user.lastName %></h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+    <div class="btn-group me-2">
+      <a href="/" class="btn btn-sm btn-outline-secondary">Home</a>
+    </div>
+  </div>
+</div>
+
+<% messages.forEach(element => { %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= element %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% }) %>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col" style="max-width: 140px"><b>ID:</b></div>
+      <div class="col"><%= user.id %></div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col" style="max-width: 140px"><b>Name:</b></div>
+      <div class="col"><%= user.firstName %> <%= user.lastName %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col" style="max-width: 140px"><b>Email:</b></div>
+      <div class="col"><%= user.email %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col" style="max-width: 140px"><b>Date Created:</b></div>
+      <div class="col"><%= user.created %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col" style="max-width: 140px"><b>Date Modified:</b></div>
+      <div class="col"><%= user.updated %></div>
+    </div>
+  </li>
+</ul>
