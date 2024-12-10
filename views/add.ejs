@@ -1,7 +1,7 @@
 <div
   class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
 >
-  <h1 class="h2">Add User</h1>
+  <h1 class="h2">Add Product</h1>
   <div class="btn-toolbar mb-2 mb-md 0">
     <div class="btn-group me-2">
       <a href="/" class="btn btn-sm btn-outline-secondary">Home</a>
@@ -12,27 +12,27 @@
 <form action="/add" method="POST">
   <div class="row form-group mb-4">
     <div class="col">
-      <label for="firstName">First Name</label>
+      <label for="name">Product Name</label>
       <input
         type="text"
         class="form-control"
-        id="firstName"
-        name="firstName"
+        id="name"
+        name="name"
         value=""
-        placeholder="First Name"
+        placeholder="Product Name"
         required
       />
     </div>
 
     <div class="col">
-      <label for="lastName">Last Name</label>
+      <label for="category">Category</label>
       <input
         type="text"
         class="form-control"
-        id="lastName"
-        name="lastName"
+        id="category"
+        name="category"
         value=""
-        placeholder="Last Name"
+        placeholder="Category"
         required
       />
     </div>
@@ -40,20 +40,48 @@
 
   <div class="row form-group mb-4">
     <div class="col">
-      <label for="email">Email</label>
+      <label for="quantity">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="quantity"
+        name="quantity"
+        value=""
+        placeholder="Quantity"
+        required
+      />
+    </div>
+  </div>
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        name="price"
+        value=""
+        placeholder="Price"
+        required
+      />
+    </div>
+  </div>
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="description">Description</label>
       <input
         type="text"
         class="form-control"
-        id="email"
-        name="email"
+        id="description"
+        name="description"
         value=""
-        placeholder="Email"
+        placeholder="Description"
         required
       />
     </div>
   </div>
 
   <div class="form-group mb-4">
-    <button type="submit" class="btn btn-primary">Add User</button>
+    <button type="submit" class="btn btn-primary">Add Product</button>
   </div>
 </form>

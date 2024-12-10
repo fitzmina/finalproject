@@ -1,12 +1,10 @@
 const User = require("../models/userModel");
-const mongoose = require("mongoose");
 
 exports.home = async (req, res) => {
   const messages = await req.flash("info");
 
   const locals = {
     title: "Home",
-    description: "User Management System",
   };
 
   try {
@@ -19,8 +17,7 @@ exports.home = async (req, res) => {
 
 exports.addUser = async (req, res) => {
   const locals = {
-    title: "Add User",
-    description: "User Management System",
+    title: "Add Product",
   };
 
   res.render("add", locals);
@@ -28,14 +25,16 @@ exports.addUser = async (req, res) => {
 
 exports.postUser = async (req, res) => {
   const newUser = new User({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
+    name: req.body.name,
+    category: req.body.category,
+    quantity: req.body.quantity,
+    price: req.body.price,
+    description: req.body.description,
   });
 
   try {
     await User.create(newUser);
-    await req.flash("info", "New user has been added.");
+    await req.flash("info", "New Product has been added.");
     res.redirect("/");
   } catch (error) {
     console.log(error);
@@ -44,8 +43,7 @@ exports.postUser = async (req, res) => {
 
 exports.viewUser = async (req, res) => {
   const locals = {
-    title: "View User",
-    description: "User Management System",
+    title: "View Product",
   };
 
   const messages = await req.flash("info");
@@ -60,8 +58,7 @@ exports.viewUser = async (req, res) => {
 
 exports.editUser = async (req, res) => {
   const locals = {
-    title: "Edit User",
-    description: "User Management System",
+    title: "Edit Product",
   };
 
   try {
@@ -76,13 +73,14 @@ exports.editUser = async (req, res) => {
 exports.edit = async (req, res) => {
   try {
     await User.findByIdAndUpdate(req.params.id, {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      updated: Date.now(),
+      name: req.body.name,
+      category: req.body.category,
+      quantity: req.body.quantity,
+      price: req.body.price,
+      description: req.body.description,
     });
 
-    await req.flash("info", "User details has been updated.");
+    await req.flash("info", "Product details has been updated.");
 
     res.redirect(`/view/${req.params.id}`);
   } catch (error) {

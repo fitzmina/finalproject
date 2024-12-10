@@ -1,7 +1,7 @@
 <div
   class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
 >
-  <h1 class="h2"><%= user.firstName %> <%= user.lastName %></h1>
+  <h1 class="h2"><%= user.name %></h1>
   <div class="btn-toolbar mb-2 mb-md 0">
     <div class="btn-group me-2">
       <a href="/" class="btn btn-sm btn-outline-secondary">Home</a>
@@ -12,44 +12,62 @@
 <form action="/edit/<%= user._id %>?_method=PUT" method="POST">
   <div class="row form-group mb-4">
     <div class="col">
-      <label for="firstName">First Name</label>
+      <label for="name">Product Name</label>
       <input
         type="text"
         class="form-control"
-        id="firstName"
-        name="firstName"
-        value="<%=user.firstName%>"
+        id="name"
+        name="name"
+        value="<%=user.name%>"
       />
     </div>
 
     <div class="col">
-      <label for="lastName">Last Name</label>
+      <label for="category">Category:</label>
       <input
         type="text"
         class="form-control"
-        id="lastName"
-        name="lastName"
-        value="<%=user.lastName%>"
-      />
-    </div>
-  </div>
-
-  <div class="row form-group mb-4">
-    <div class="col">
-      <label for="email">Email</label>
-      <input
-        type="text"
-        class="form-control"
-        id="email"
-        name="email"
-        value="<%= user.email %>"
+        id="category"
+        name="category"
+        value="<%=user.category%>"
       />
     </div>
   </div>
 
   <div class="row form-group mb-4">
     <div class="col">
-      <b>Last Updated: <%= new Date(user.updated) %></b>
+      <label for="quantity">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="quantity"
+        name="quantity"
+        value="<%= user.quantity %>"
+      />
+    </div>
+
+    <div class="col">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        name="price"
+        value="<%= user.price %>"
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="description">description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        name="description"
+        value="<%= user.description %>"
+      />
     </div>
   </div>
 
