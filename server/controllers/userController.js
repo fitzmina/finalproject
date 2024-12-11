@@ -91,6 +91,7 @@ exports.edit = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     await User.deleteOne({ _id: req.params.id });
+    await req.flash("info", "Product has been deleted.");
     res.redirect(`/`);
   } catch (error) {
     console.log(error);
